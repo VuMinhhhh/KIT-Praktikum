@@ -8,6 +8,6 @@ for i in range (len(Klartext)):
     if Klartext[i] == ' ':
         Geheimtext += ' '
     else: 
-        Geheimtext += chr((ord(Klartext[i]) - 65 + Schlüssel) % 26  + 65)
+        Geheimtext += chr((ord(Klartext[i]) - 97 + Schlüssel) % 26  + 97)
 print("Hier ist den Geheimtext:", Geheimtext)
 file.close()
