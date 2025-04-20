@@ -27,15 +27,14 @@ def Entschlüsselung (Geheimtext, Schlüssel):
         if Geheimtext[i] == ' ':
             Klartext += ' '
         else: 
-            Klartext += chr((ord(Geheimtext[i]) - 65 - Schlüssel) % 26  + 65)
+            Klartext += chr((ord(Geheimtext[i]) - 97 - Schlüssel) % 26  + 97)
     return Klartext
 
 def Wert_n_gram (Geheimtext, n_gram_Häufigkeit, n):
     Wert = 0
     for i in range (len(Geheimtext) - n + 1):
         temp = ""
-        for j in range (i, i + n - 1):
-            temp += Geheimtext[i]
+        temp = Geheimtext[i : i + n]
         Wert += n_gram_Häufigkeit.get(temp, 0)
     return Wert
 
@@ -50,7 +49,7 @@ print("Geben Sie den Geheimtext:", end = "")
 Geheimtext = input()
 Klartext = ""
 Wert_Klartext = 0
-for Schlüssel in range 26:
+for Schlüssel in range (26):
     entschlüsselt = Entschlüsselung(Geheimtext, Schlüssel)
     Wert_entschlüsselt = Wert(entschlüsselt)
     if Wert_entschlüsselt > Wert_Klartext:
@@ -58,5 +57,3 @@ for Schlüssel in range 26:
         Wert_Klartext = Wert_entschlüsselt
 print("Hier ist wahrscheinlich der Klartext:", end = "")
 print(Klartext)
-    
-    
