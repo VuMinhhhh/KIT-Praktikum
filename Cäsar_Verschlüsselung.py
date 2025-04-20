@@ -1,13 +1,13 @@
 file = open('TextFile1.txt','r')
-print("Geben Sie den Schluessel:", end = "")
-schluessel = int(input())
+print("Geben Sie den Schlüssel:", end = "")
+Schlüssel = int(input())
 print("Geben Sie den Klartext:", end = "")
-stri = input()
-stro = ""
-for i in range (len(stri)):
-    if stri[i] == ' ':
-        stro += ' '
+Klartext = input()
+Geheimtext = ""
+for i in range (len(Klartext)):
+    if Klartext[i] == ' ':
+        Geheimtext += ' '
     else: 
-        stro += chr((ord(stri[i]) - 65 + schluessel) % 26  + 65)
-print("Hier ist den Geheimtext:", stro)
+        Geheimtext += chr((ord(Klartext[i]) - 65 + Schlüssel) % 26  + 65)
+print("Hier ist den Geheimtext:", Geheimtext)
 file.close()
