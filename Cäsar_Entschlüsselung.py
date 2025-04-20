@@ -36,8 +36,8 @@ def Wert_n_gram (Geheimtext, n_gram_Häufigkeit, n):
         temp = ""
         for j in range (i, i + n - 1):
             temp += Geheimtext[i]
-        wert += n_gram_Häufigkeit.get(temp, 0)
-    return wert
+        Wert += n_gram_Häufigkeit.get(temp, 0)
+    return Wert
 
 def Wert(Klartext):
     Wert = 0
