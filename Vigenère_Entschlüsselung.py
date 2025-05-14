@@ -73,13 +73,14 @@ def Entschluesselung(Geheimtext, Schluessel):
             Klartext += Geheimtext[i]
     return Klartext
 
+print("Geben Sie bitte den Geheimtext ein: ", end = "")
 Geheimtext = input()
 Laenge_Schluessel = Laenge_Schluessel_Identifizierung(Geheimtext)
 Schluessel = ""
 for it in range (Laenge_Schluessel):
     nach_index_verteilt_Elemente = nach_index_verteilt(Geheimtext, Laenge_Schluessel, it)
     index = Schluessel_Identifizierung(nach_index_verteilt_Elemente)
-    Schluessel += chr(index + 65)
+    Schluessel += chr((26 - index) % 26 + 65)
 Klartext = Entschluesselung(Geheimtext, Schluessel)
 print ("Hier ist wahrscheinlich der Schluessel:", Schluessel)
 print ("Hier ist Klartext:", Klartext)
