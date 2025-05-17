@@ -1,17 +1,15 @@
 # -*- coding: utf-8 -*-
 import random
-Zufallsantworten = ["Oh, wirklich", "Interessant ...", "Das kann man so sehen", "Ich verstehe ..."]
-Reaktionsantworten = {"hallo": "Hallo", "bye": "Einen schönen Tag wünsche ich dir. Bis zum nächsten Mal"}
+import meine_Variablen
 
 def Antworten(Benutzer_Woeter):
     in_Reaktionsantworten = False
     for Einzelwoeter in Benutzer_Woeter:
-        if Einzelwoeter in Reaktionsantworten:
-            print(Reaktionsantworten[Einzelwoeter])
+        if Einzelwoeter in meine_Variablen.Reaktionsantworten:
+            print(meine_Variablen.Reaktionsantworten[Einzelwoeter])
             in_Reaktionsantworten = True
     if in_Reaktionsantworten == False:
-        print(random.choice(Zufallsantworten))
-    print("")
+        print(random.choice(meine_Variablen.Zufallsantworten))
 
 print("Willkommen beim Chatbot")
 print("Wonach möchten Sie sich gerne erkundigen")
@@ -25,7 +23,6 @@ while(Benutzer_Eingabe != "bye"):
         if Benutzer_Eingabe.strip() == "":
             print ("Wie bitte?")
             leer_Eingabe = True
-            print("")
         else:
             leer_Eingabe = False
     Benutzer_Eingabe = Benutzer_Eingabe.lower()
