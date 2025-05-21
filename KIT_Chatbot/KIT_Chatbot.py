@@ -336,7 +336,7 @@ Eine Erstattung der Gebühren erfolgt
 - wenn ein Kurs nicht stattfinden kann.
 """
 Basiskurs = Knoten("Basiskurs")
-D_Kurse.hinzufuegen(Basiskurs)
+TestDaF_Vorbereitung.hinzufuegen(Basiskurs)
 Basiskurs.Inhalt = """
 Basiskurs digitaler TestDaF
 
