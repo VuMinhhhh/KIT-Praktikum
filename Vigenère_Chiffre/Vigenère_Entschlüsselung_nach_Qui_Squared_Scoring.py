@@ -69,7 +69,6 @@ def Schluessel_Identifizierung(nach_index_verteilt_Elemente):
     for i in range (26):
         tmp = um_n_Stellen_verschoben(nach_index_verteilt_Elemente, i)
         tmp_Wert = Chi_Squared_Scoring(tmp)
-        print 
         if tmp_Wert < Wert:
             Wert = tmp_Wert
             index = i
